@@ -21,6 +21,7 @@ import { assign } from '../utils/assign.js';
  */
 export function toLoadPromise(app) {
   return Promise.resolve().then(() => {
+    // 若当前app正在加载，则直接返回该promise
     if (app.loadPromise) {
       return app.loadPromise;
     }
