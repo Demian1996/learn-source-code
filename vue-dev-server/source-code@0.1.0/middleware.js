@@ -149,7 +149,9 @@ const vueMiddleware = (options = defaultOptions) => {
 
       send(res, out, 'application/javascript')
     } else {
-      next()
+      // 用户最终访问/node_modules/vue/dist/vue.esm.browser.js会走下一个中间件
+      // 即访问静态文件夹，找到源文件
+      next();
     }
   }
 }

@@ -4,6 +4,7 @@ const readFile = require('util').promisify(fs.readFile)
 
 /**
  * @description 加载三方依赖
+ * 从下方的代码可以看到，该版本仅支持解析vue，其他npm包暂不支持
  */
 async function loadPkg(pkg) {
   // 如果是vue包，则返回相应的运行环境的文件
